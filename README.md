@@ -19,7 +19,7 @@ To run this program, from the command line, enter
 ```ruby
 $ git clone https://github.com/gpepic/playlist_rb.git
 $ cd playlist_rb
-$ ruby playlist.rb
+$ ruby lib/playlist.rb
 ```
 
 Follow the prompts to enter new song and the artist, or list your stored information.
