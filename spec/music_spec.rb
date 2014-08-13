@@ -25,7 +25,13 @@ describe :playlist do
 
     describe '.all' do
       it 'is empty hash at first' do
-        expect(Playlist.all).to eq({})
+        expect(Playlist.all).to eq([])
+      end
+
+      it 'gets added to when save is called on instance' do
+        test_playlist = Playlist.new({:artist => 'Goo Goo Dolls', :album => 'Magnetic', :song =>'When the World Breaks Your Heart'})
+        test_playlist.save
+        expect(Playlist.all).to eq([test_playlist])
       end
     end
 end

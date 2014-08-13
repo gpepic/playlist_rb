@@ -1,5 +1,7 @@
 require './lib/playlist'
 
+@list = []
+
 def main_menu
 
   puts "Press 'a' to add new song to playlist or 'l' to list songs in your playlist."
@@ -17,4 +19,21 @@ def main_menu
     main_choice
   end
 end
+
+def add_music
+  puts "Enter Artist"
+  artist = gets.chomp
+  puts "Enter Album Name"
+  album = gets.chomp
+  puts "Enter Song Title"
+  title = gets.chomp
+
+  @list << Playlist.new({:artist => artist, :album => album, :song => title})
+
+  puts "Music added to Playlist."
+  puts "\n\n"
+  main_menu
+end
+
+
 
