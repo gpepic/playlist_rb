@@ -35,5 +35,16 @@ def add_music
   main_menu
 end
 
+def list_music
+  puts "Here is a list of your music:"
+  @list.each do |music|
+    puts music.description
+  end
+  puts "\n\n"
+  main_menu
+end
+
+main_menu
+
 
 
