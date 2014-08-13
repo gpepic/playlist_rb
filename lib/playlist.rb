@@ -3,7 +3,7 @@ require 'pry'
 class Playlist
   attr_reader :artist, :album, :song
 
-  @@all_playlists = []
+  @@all_playlists = {}
 
   def initialize(attributes)
     @artist = attributes[:artist]
