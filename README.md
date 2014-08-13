@@ -3,7 +3,7 @@ PLAYLIST ORGANIZER
 
 #Author:
 
-####Ginger Pearson
+###Ginger Pearson
 
 ###8/13/2014
 

@@ -22,4 +22,10 @@ describe :playlist do
       test_playlist = Playlist.new({:song => 'When the World Breaks Your Heart'})
       expect(test_playlist.song).to eq('When the World Breaks Your Heart')
     end
+
+    describe '.all' do
+      it 'is empty at first' do
+        expect(Playlist.all).to eq([])
+      end
+    end
 end
