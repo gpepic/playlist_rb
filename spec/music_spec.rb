@@ -12,4 +12,9 @@ describe :playlist do
       test_playlist = Playlist.new({:album => 'Magnetic'})
       expect(test_playlist.album).to eq('Magnetic')
     end
+
+    it 'shows the name of the artist' do
+      test_playlist = Playlist.new({:artist => 'Goo Goo Dolls'})
+      expect(test_playlist.artist).to eq('Goo Goo Dolls')
+    end
 end
