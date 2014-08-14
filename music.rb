@@ -14,7 +14,6 @@ def main_menu
     list_music
   elsif main_choice == 's'
     submenu
-
   elsif main_choice == 'x'
     puts "Good bye!"
   else
@@ -62,7 +61,6 @@ def submenu
     sub_choice
   end
 end
-
 
 def sort_artist
   puts "Here is your list, sorted by artists:"

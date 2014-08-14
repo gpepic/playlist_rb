@@ -1,7 +1,7 @@
 PLAYLIST ORGANIZER
 ===========
 
-#Author:
+###Author:
 
 ###Ginger Pearson
 
@@ -14,7 +14,7 @@ V1.1.0
 This Ruby program will allow the user to catalog and organize a music playlist by song title, album name, or artist.
 
 ###Directions:
-To run this program, from the command line, enter
+To run this program, `Ruby` will need to be installed on your system.  From the command line, enter:
 
 ```ruby
 $ git clone https://github.com/gpepic/playlist_rb.git

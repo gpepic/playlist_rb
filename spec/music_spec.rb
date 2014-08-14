@@ -1,5 +1,5 @@
 require 'rspec'
-require 'music'
+require './lib/playlist'
 
 describe :playlist do
 
