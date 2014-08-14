@@ -2,6 +2,7 @@ require './lib/playlist'
 
 @list = []
 
+
 def main_menu
 
   puts "Press 'a' to add new song to playlist, 'l' to list your music or 's' to sort your playlist."
@@ -12,17 +13,8 @@ def main_menu
     add_music
   elsif main_choice == 'l'
     list_music
-
   elsif main_choice == 's'
-    puts "Press 'a' to sort by Artist, 'l' to sort by Album, or 's' to sort by song title."
-      sub_choice = gets.chomp
-
-      if sub_choice == 'a'
-        sort_artist
-      elsif sub_choice == 'l'
-        sort_album
-      elsif sub_choice == 's'
-        sort_title
+    submenu
 
   elsif main_choice == 'x'
     puts "Good bye!"
@@ -55,6 +47,23 @@ def list_music
   puts "\n\n"
   main_menu
 end
+
+def submenu
+  puts "Press 'a' to sort by Artist, 'l' to sort by Album, or 's' to sort by song title."
+  sub_choice = gets.chomp
+
+  if sub_choice == 'a'
+    sort_artist
+  elsif sub_choice == 'l'
+    sort_album
+  elsif sub_choice == 's'
+    sort_title
+  else
+    puts "Sorry, that option is invalid. Good bye."
+    sub_choice
+  end
+end
+
 
 def sort_artist
   puts "Here is your list, sorted by artists:"
