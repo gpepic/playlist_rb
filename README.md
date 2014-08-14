@@ -1,11 +1,10 @@
-PLAYLIST ORGANIZER
+Playlist Organizer
 ===========
 
 ###Author:
 
-###Ginger Pearson
-
-###8/13/2014
+###Ginger G Pearson
+8/13/2014
 
 ###Version:
 V1.1.0
@@ -22,8 +21,8 @@ $ cd playlist_rb
 $ ruby lib/playlist.rb
 ```
 
-Follow the prompts to enter music, list your saved entries, or to sort your stored information.
+Follow the prompts to enter music; list your saved entries; or to sort your stored information by artist, album or song title.
 
 Enjoy!
 
-####Copyright © 2014
+###Copyright © 2014
