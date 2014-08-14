@@ -9,7 +9,7 @@ class Playlist
     @artist = attributes[:artist]
     @album = attributes[:album]
     @song = attributes[:song]
-    @description = attributes[:artist, :album, :song]
+    @description = attributes
   end
 
   def Playlist.all
