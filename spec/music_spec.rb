@@ -24,7 +24,7 @@ describe :playlist do
     end
 
     describe '.all' do
-      it 'is empty hash at first' do
+      it 'is empty array at first' do
         expect(Playlist.all).to eq([])
       end
 
