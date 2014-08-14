@@ -2,7 +2,6 @@ require './lib/playlist'
 
 @list = []
 
-
 def main_menu
 
   puts "Press 'a' to add new song to playlist, 'l' to list your music or 's' to sort your playlist."
