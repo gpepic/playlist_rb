@@ -34,4 +34,12 @@ describe :playlist do
         expect(Playlist.all).to eq([test_playlist])
       end
     end
+
+    describe '.clear' do
+      it 'empties out all the saved music' do
+        Playlist.new({:artist => 'Goo Goo Dolls', :album => 'Magnetic', :song =>'When the World Breaks Your Heart'}).save
+        Playlist.clear
+        expect(Playlist.all).to eq([])
+      end
+    end
 end

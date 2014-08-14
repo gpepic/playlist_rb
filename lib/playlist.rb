@@ -9,10 +9,19 @@ class Playlist
     @artist = attributes[:artist]
     @album = attributes[:album]
     @song = attributes[:song]
+    @description = attributes[:artist, :album, :song]
   end
 
   def Playlist.all
     @@all_playlists
+  end
+
+  def Playlist.clear
+    @@all_playlists = []
+  end
+
+  def description
+    @description
   end
 
   def save
@@ -25,5 +34,3 @@ class Playlist
   # end
 end
 
-# Playlist.new(
-#   :album => 'Magnetic')
