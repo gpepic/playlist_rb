@@ -1,4 +1,4 @@
-Playlist Organizer
+Music Organizer
 ===========
 
 ###Author:
@@ -7,10 +7,10 @@ Playlist Organizer
 8/13/2014
 
 ###Version:
-V1.1.0
+V2.0.0
 
 ###Description:
-This Ruby program will allow the user to catalog and organize a music playlist by song title, album name, or artist.
+This Ruby program will allow the user to enter music and list it by song title, album name, or artist.
 
 ###Directions:
 To run this program, `Ruby` will need to be installed on your system.  From the command line, enter:
@@ -21,7 +21,10 @@ $ cd playlist_rb
 $ ruby lib/playlist.rb
 ```
 
-Follow the prompts to enter music; list your saved entries; or to sort your stored information by artist, album or song title.
+Follow the prompts to enter music or to list your information by artist, album or song title.
+
+###Notes:
+There is no database attached to this program. The information you enter will be lost when the program is exited.
 
 Enjoy!
 

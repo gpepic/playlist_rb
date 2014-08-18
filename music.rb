@@ -1,10 +1,12 @@
 require './lib/playlist'
+require './lib/artist'
 
 @list = []
-
+# use an array as a property of one class that contained objects of
+# the other class
 def main_menu
 
-  puts "Press 'a' to add new song to playlist, 'l' to list your music or 's' to sort your playlist."
+  puts "Press 'a' to add new music, 'l' to list your music or 's' to list your music by artist, album or song title."
   puts "Press 'x' to exit."
   main_choice = gets.chomp
 
@@ -32,7 +34,7 @@ def add_music
 
   @list << Playlist.new({:artist => artist, :album => album, :song => title})
 
-  puts "Music added to Playlist."
+  puts "Music added."
   puts "\n\n"
   main_menu
 end
@@ -47,23 +49,23 @@ def list_music
 end
 
 def submenu
-  puts "Press 'a' to sort by Artist, 'l' to sort by Album, or 's' to sort by song title."
+  puts "Press 'a' to list by Artist, 'l' to list by Album, or 's' to list by Song Title."
   sub_choice = gets.chomp
 
   if sub_choice == 'a'
-    sort_artist
+    list_artist
   elsif sub_choice == 'l'
-    sort_album
+    list_album
   elsif sub_choice == 's'
-    sort_title
+    list_title
   else
     puts "Sorry, that option is invalid. Good bye."
     sub_choice
   end
 end
 
-def sort_artist
-  puts "Here is your list, sorted by artists:"
+def list_artist
+  puts "Here is a list of your music artists:"
   @list.each do |music|
     puts music.artist
   end
@@ -71,8 +73,8 @@ def sort_artist
   main_menu
 end
 
-def sort_album
-  puts "Here is your list, sorted by album:"
+def list_album
+  puts "Here is a list of your music albums:"
   @list.each do |music|
     puts music.album
   end
@@ -80,8 +82,8 @@ def sort_album
   main_menu
 end
 
-def sort_title
-  puts "Here is your list, sorted by song titles:"
+def list_title
+  puts "Here is a list of your music song titles:"
   @list.each do |music|
     puts music.title
   end
