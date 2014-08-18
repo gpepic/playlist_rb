@@ -32,7 +32,7 @@ def add_music
   puts "Enter Song Title"
   title = gets.chomp
 
-  @list << Playlist.new({:artist => artist, :album => album, :song => title})
+  @list << Playlist.new({@@artists, :album => album, :song => title})
 
   puts "Music added."
   puts "\n\n"

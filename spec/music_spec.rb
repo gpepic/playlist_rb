@@ -25,7 +25,7 @@ describe :playlist do
       end
 
       it 'gets added to when save is called on instance' do
-        test_playlist = Playlist.new({:artist => ['Goo Goo Dolls', 'Daughtry'], :album => 'Magnetic', :song =>'When the World Breaks Your Heart'})
+        test_playlist = Playlist.new({:album => 'Magnetic', :song =>'When the World Breaks Your Heart'})
         test_playlist.save
         expect(Playlist.all).to eq([test_playlist])
       end
@@ -48,7 +48,7 @@ describe :artist do
 
     it 'shows the name of the artist' do
       test_artist = Artist.new({:artist => ['Goo Goo Dolls', 'Daughtry']})
-      expect(test_artist.artist).to eq(['Goo Goo Dolls', 'Daughtry'])
+      expect(test_artist.music_artist).to eq(['Goo Goo Dolls', 'Daughtry'])
     end
   end
 end
