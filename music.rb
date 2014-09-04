@@ -1,26 +1,27 @@
 require './lib/playlist'
-require './lib/artist'
+require './lib/song'
 
-@list = []
-# use an array as a property of one class that contained objects of
-# the other class
 def main_menu
+  while true
+    puts "\n\n"
+    puts "Press 'a' to add new music."
+    puts "Press 'l' to list your music."
+    puts "Press 's' to sort your music by artist, album, or title."
+    puts "Press 'x' to exit."
+    main_choice = gets.chomp
 
-  puts "Press 'a' to add new music, 'l' to list your music or 's' to list your music by artist, album or song title."
-  puts "Press 'x' to exit."
-  main_choice = gets.chomp
-
-  if main_choice == 'a'
-    add_music
-  elsif main_choice == 'l'
-    list_music
-  elsif main_choice == 's'
-    submenu
-  elsif main_choice == 'x'
-    puts "Good bye!"
-  else
-    puts "Sorry, that option is invalid. Good bye."
-    main_choice
+    if main_choice == 'a'
+      add_music
+    elsif main_choice == 'l'
+      print_attr_menu
+    elsif main_choice == 's'
+      sort_menu
+    elsif main_choice == 'x'
+      puts "Good bye!"
+      break
+    else
+      puts "Sorry, that option is invalid. Good bye."
+    end
   end
 end
 
@@ -32,64 +33,63 @@ def add_music
   puts "Enter Song Title"
   title = gets.chomp
 
-  @list << Playlist.new({@@artists, :album => album, :song => title})
+  song = Song.new({:artist => artist, :album => album, :title => title})
+  $playlist.add_song song
 
   puts "Music added."
   puts "\n\n"
   main_menu
 end
 
-def list_music
-  puts "Here is a list of your music:"
-  @list.each do |music|
-    puts music.description
-  end
+def create_new_playlist
+  puts "Welcome!"
   puts "\n\n"
-  main_menu
+  puts "Enter Playlist Name"
+  name = gets.chomp
+  puts "\n\n"
+  puts "Enter Playlist Theme"
+  theme = gets.chomp
+  puts "\n\n"
+
+  Playlist.new({:name => name, :theme => theme})
 end
 
-def submenu
-  puts "Press 'a' to list by Artist, 'l' to list by Album, or 's' to list by Song Title."
+def print_attr_menu
+  puts "Press 'a' to list by Artist, 'l' to list by Album, 't' to list by Title or any other key to print list of songs."
   sub_choice = gets.chomp
 
   if sub_choice == 'a'
-    list_artist
+    $playlist.print_artists
   elsif sub_choice == 'l'
-    list_album
-  elsif sub_choice == 's'
-    list_title
+    $playlist.print_album
+  elsif sub_choice == 't'
+    $playlist.print_titles
   else
-    puts "Sorry, that option is invalid. Good bye."
+    $playlist.print_songs
+  end
+end
+
+def sort_menu
+  puts "Press 'a' to sort by Artist, 'l' to sort by Album, or 't' to sort by Title."
+  sub_choice = gets.chomp
+
+  if sub_choice == 'a'
+    puts $playlist.sort :artist
+  elsif sub_choice == 'l'
+    puts $playlist.sort :album
+  elsif sub_choice == 't'
+    puts $playlist.sort :title
+  else
+    puts "Sorry, that option is invalid."
     sub_choice
   end
 end
 
-def list_artist
-  puts "Here is a list of your music artists:"
-  @list.each do |music|
-    puts music.artist
-  end
-  puts "\n\n"
-  main_menu
-end
-
-def list_album
-  puts "Here is a list of your music albums:"
-  @list.each do |music|
-    puts music.album
-  end
-  puts "\n\n"
-  main_menu
-end
-
-def list_title
-  puts "Here is a list of your music song titles:"
-  @list.each do |music|
-    puts music.title
-  end
-  puts "\n\n"
-  main_menu
-end
+# $playlist = Playlist.new({:title => "My Favorite Songs", :theme => "Love Life"})
+# $playlist.add_song Song.new({:artist => "goo goo dolls", :album => "magnetic", :title => "When the World Breaks Your Heart" })
+# $playlist.add_song Song.new({:artist => "goo goo dolls", :album => "let love in", :title => "Give a Little Bit" })
+# $playlist.add_song Song.new({:artist => "Artist Test", :album => "Test Album", :title => "Test Title" })
+$playlist = create_new_playlist
 
 main_menu
 
